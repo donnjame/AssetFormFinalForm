@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block body_block %}
+
+<h1>
+    {% if not form.instance.pk %}
+    
+
+    {% else %}
+
+    Update BeaconAsset
+
+    {% endif %}
+</h1>
+    <div class="jumbotron p-4 mb-2 ">
+    <form method="POST" class="form">
+        
+        {% csrf_token %}
+        <!-- <input type="checkbox" onclick="myFunction()"> Laptop<br>
+        <div id="myDIV" style="display: none;">
+        {% bootstrap_field form.first_name show_label=False %}
+        </div> -->
+        <div>
+            <p class="lead">What is your Full name(First, Last)</p>
+            <!-- {{form.first_name}} -->
+        </div>
+        
+        <div class="form-row">
+            <div class="col">
+                First Name: {% bootstrap_field form.first_name size='medium' placeholder='First Name' show_label=False %}
+            </div>
+            <div class="col">
+                Last Name: {% bootstrap_field form.last_name size='medium' placeholder='Last Name' show_label=False %}
+            </div>
+        </div>
+        <p></p>
+        
+            
+       
+        <p class="lead">Do you work primarily in office or at home</p>
+        
+            
+        {% bootstrap_field form.work_location layout='horizontal' horizontal_field_class='col-md-2' show_label=False %}
+            
+    
+        
+
+        <p></p>
+   
+        
+        
+        <p class="lead">
+           <strong>If you have any of the below which also have an asset tag, please check the corresponding box and fill out the Asset Tag information in the box provided</strong> 
+        </p>
+        
+        <hr class="my-4">
+        
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction2()"> Laptop<br>
+        <div id="myDIV2" style="display: none;">
+            <!-- {% bootstrap_field form.laptop layout='horizontal' horizontal_field_class='col-md-2' show_label=False %} -->
+            {{form.laptop}}
+        </div>    
+        <p></p>
+        
+        <input type="checkbox" onclick="myFunction3()"> Desktop<br>
+        <div id="myDIV3" style="display: none;">
+        {{form.desktop}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction4()"> Monitor<br>
+        <div id="myDIV4" style="display: none;">
+        {{form.single_monitor}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction5()"> Monitor2<br>
+        <div id="myDIV5" style="display: none;">
+        {{form.second_monitor}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction6()"> Monitor3<br>
+        <div id="myDIV6" style="display: none;">
+        {{form.third_monitor}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction7()"> Docking Station<br>
+        <div id="myDIV7" style="display: none;">
+        {{form.docking_station}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction8()"> Printer<br>
+        <div id="myDIV8" style="display: none;">
+        {{form.printer}}
+        </div>    
+        <p></p>
+
+        <input type="checkbox" onclick="myFunction9()"> Desk Phone<br>
+        <div id="myDIV9" style="display: none;">
+        {{form.desk_phone}}
+        </div>
+        <p></p>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <input type="submit" class='btn btn-primary' value="Submit">
+        
+        <!-- name = 
+        department = 
+        work_location = 
+        desktop = 
+        laptop = 
+        desk_phone = 
+        single_monitor = 
+        second_monitor = 
+        third_monitor = 
+        docking_station = 
+        printer  -->
+
+
+
+
+
+
+
+
+    </form>
+    </div>
+
+{% endblock %}
